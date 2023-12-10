@@ -1,6 +1,24 @@
-.list {
-  display: flex;
-  gap: 2em;
+/* デスクトップ */
+@media (min-width: 768px) {
+  .btn {
+    display: none;
+  }
+
+  .list {
+    display: flex;
+    gap: 2em;
+  }
+}
+
+/* モバイル*/
+@media (max-width: 768px) {
+  .close .btn {
+    color: blue;
+  }
+
+  .open .btn {
+    color: red;
+  }
 }
 
 /* ホバーできるデスクトップ環境 */
