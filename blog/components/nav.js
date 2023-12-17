@@ -8,21 +8,44 @@ export default function Nav() {
   const toggeleNav = () => {
     setNavIsOpen(!navIsOpen);
   };
+  const closeNav = () => {
+    setNavIsOpen(!navIsOpen);
+  };
 
   return (
     <nav className={navIsOpen ? styles.open : styles.close}>
+      {navIsOpen && (
+        <style jsx global>
+          {`
+            @media (max-width: 767px) {
+              body {
+                overflow: hidden;
+                position: fixed;
+                width: 100%;
+              }
+            }
+          `}
+        </style>
+      )}
       <button className={styles.btn} onClick={toggeleNav}>
-        MENU
+        <span className={styles.bar}></span>
+        <span className="sr-only">MENU</span>
       </button>
       <ul className={styles.list}>
         <li>
-          <Link href="/">HOME</Link>
+          <Link href="/" onClick={closeNav}>
+            HOME
+          </Link>
         </li>
         <li>
-          <Link href="/about">ABOUT</Link>
+          <Link href="/about" onClick={closeNav}>
+            ABOUT
+          </Link>
         </li>
         <li>
-          <Link href="/blog">BLOG</Link>
+          <Link href="/blog" onClick={closeNav}>
+            BLOG
+          </Link>
         </li>
       </ul>
     </nav>

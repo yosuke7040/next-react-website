@@ -10,6 +10,7 @@ import {
 } from "@/components/two-column";
 import Image from "next/legacy/image";
 import eyecatch from "images/about.jpg";
+import Accordion from "@/components/accodion";
 
 export default function About() {
   return (
@@ -51,6 +52,17 @@ export default function About() {
             <p>
               今までと違うものを作ることで愛着が湧いてきます。そこで興味を持ったことは小さなことでもいいから取り入れて、良いものを作れるようにしています。小さなヒントから新しいものを生み出すようなモノづくりは、これからも続けていきたいです。
             </p>
+
+            <h2>FAQ</h2>
+            <Accordion heading="プログラミングのポイントについて">
+              <p>プログラミングのポイントは〜〜〜</p>
+            </Accordion>
+            <Accordion heading="古代語の解読について">
+              <p>hogehoge〜〜〜</p>
+            </Accordion>
+            <Accordion heading="公開リポジトリの活用について">
+              <p>fugafuga〜〜〜</p>
+            </Accordion>
           </PostBody>
         </TwoColumnMain>
 
